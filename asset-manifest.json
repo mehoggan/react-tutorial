@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mehoggan/react-tutorial/static/css/main.4989329f.chunk.css",
+    "main.js": "/mehoggan/react-tutorial/static/js/main.4d9ebd73.chunk.js",
+    "main.js.map": "/mehoggan/react-tutorial/static/js/main.4d9ebd73.chunk.js.map",
+    "runtime-main.js": "/mehoggan/react-tutorial/static/js/runtime-main.5a5e76da.js",
+    "runtime-main.js.map": "/mehoggan/react-tutorial/static/js/runtime-main.5a5e76da.js.map",
+    "static/js/2.6a1a9400.chunk.js": "/mehoggan/react-tutorial/static/js/2.6a1a9400.chunk.js",
+    "static/js/2.6a1a9400.chunk.js.map": "/mehoggan/react-tutorial/static/js/2.6a1a9400.chunk.js.map",
+    "index.html": "/mehoggan/react-tutorial/index.html",
+    "precache-manifest.4948fc0935c9ea5eb3eec8596e637cff.js": "/mehoggan/react-tutorial/precache-manifest.4948fc0935c9ea5eb3eec8596e637cff.js",
+    "service-worker.js": "/mehoggan/react-tutorial/service-worker.js",
+    "static/css/main.4989329f.chunk.css.map": "/mehoggan/react-tutorial/static/css/main.4989329f.chunk.css.map",
+    "static/js/2.6a1a9400.chunk.js.LICENSE.txt": "/mehoggan/react-tutorial/static/js/2.6a1a9400.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a5e76da.js",
+    "static/js/2.6a1a9400.chunk.js",
+    "static/css/main.4989329f.chunk.css",
+    "static/js/main.4d9ebd73.chunk.js"
+  ]
+}
