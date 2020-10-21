@@ -1,43 +1,47 @@
 import React, {Component} from 'react'
-import Table from './Table'
+import Board from './Board'
 import Form from './Form'
+import './index.css'
 
 class App extends Component {
-  state = {
-    characters: []
-  };
-
-  handleSubmit = (character) => {
-    this.setState({characters: [...this.state.characters, character]});
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: []
+    };
   }
 
-  removeCharacter = (index) => {
-    const {characters} = this.state
+  handleSubmit = (item) => {
+    if (this.state.items.filter(i => i.title === item.title).length === 0) {
+      this.setState({ items: [...this.state.items, item] });
+    } else {
+      const newItems = this.state.items.map(i => {
+        if (i.title === item.title) {
+          return { title: i.title, description: item.description };
+        } else {
+          return { title: i.title, description: i.description };
+        }
+      })
+      this.setState({ items: newItems });
+    }
+  }
 
-    this.setState({
-      characters: characters.filter((character, i) => {
-        return i !== index;
-      }),
-    })
+  handleDelete = (selected) => {
+    const data = this.state.items.filter((obj) => {
+        return obj.title !== selected;
+      });
+    this.setState({ items: data })
   }
 
   render() {
-    const { characters } = this.state
-
-    const name = 'Matthew Hoggan';
-    const h1 = <h1>Hello {name}</h1>;
-    const table = <Table
-      characterData={characters}
-      removeCharacter={this.removeCharacter}
-    />;
-    const form = <Form handleSubmit={this.handleSubmit} />;
-    return (
-      <div className="container">
-        {h1}
-        {table}
-        {form}
-      </div>
-    );
+    return <div>
+        <div className="actors">Books</div>
+        <Board
+          cards={this.state.items}
+          deleteCard={this.handleDelete} />
+        <Form
+          handleSubmit={this.handleSubmit} />
+      </div>;
   }
 }
 

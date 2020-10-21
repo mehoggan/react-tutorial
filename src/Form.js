@@ -1,46 +1,52 @@
 import React, {Component} from 'react'
 
 class Form extends Component {
-  initialState = {
-    name: '',
-    job: '',
+  constructor(props) {
+    super(props)
+    this.initialCard = { title: "", description: "" }
+    this.state = this.initialCard;
   }
-
-  state = this.initialState
 
   handleChange = (event) => {
-    const {name, value} = event.target
-
-    this.setState({
-      [name]: value,
-    })
+    const entry = event.target
+    this.setState({ [entry.id]: entry.value})
   }
 
-  submitForm = () => {
+  submitCard = () => {
     this.props.handleSubmit(this.state)
-    this.setState(this.initialState)
+    this.setState(this.initialCard)
+  }
+
+  deleteCard = () => {
+    this.props.handleDelete()
   }
 
   render() {
-    const { name, job } = this.state;
+    const { title, description } = this.state;
 
     return (
       <form>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="title">Title</label>
         <input
+          className="form-field"
           type="text"
-          name="name"
-          id="name"
-          value={name}
+          name="title"
+          id="title"
+          value={title}
           onChange={this.handleChange} />
-        <label htmlFor="job">Job</label>
+        <label htmlFor="description">Description</label>
         <input
+          className="form-field"
           type="text"
-          name="job"
-          id="job"
-          value={job}
+          name="description"
+          id="description"
+          value={description}
           onChange={this.handleChange} />
-        <input type="button" value="Submit" onClick={this.submitForm} />
+        <input
+          className="form-submit-button"
+          type="button"
+          value="Submit"
+          onClick={this.submitCard} />
       </form>
     );
   }
